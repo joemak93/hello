@@ -1,6 +1,7 @@
 Jenkinsfile (Declarative Pipeline)
+/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker 'php' }
+    agent { docker { image 'php:8.2.9-alpine3.18' } }
     stages {
         stage('build') {
             steps {
