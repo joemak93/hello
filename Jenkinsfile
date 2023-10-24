@@ -3,9 +3,21 @@ Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent { docker { image 'php:8.2.9-alpine3.18' } }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
+                echo 'Building'
                 sh 'php --version'
+                sh 'touch /tmp/haha.txt'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
             }
         }
     }
